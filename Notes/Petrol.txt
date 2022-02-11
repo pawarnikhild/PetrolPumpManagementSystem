@@ -1,0 +1,342 @@
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+HTML :-																													| HTML |
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Videos -																												Videos
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CSS Display FLEX vs Block, Inline & Inline-Block Explained
+https://www.youtube.com/watch?v=JtR2XKFj9tQ
+
+Position HTML Elements Side by Side with CSS - How to Align Elements Side by Side with CSS?
+https://www.youtube.com/watch?v=cW_UUjMDmo4
+
+Responsive Registration Form in HTML & CSS
+https://www.youtube.com/watch?v=okbByPWS1Xc
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Sites -																													Sites
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Border-radius in percentage (%) and pixels (px) or em
+https://stackoverflow.com/questions/29966499/border-radius-in-percentage-and-pixels-px-or-em
+
+Properties for CSS Form: Learn to Style HTML Input Forms
+https://www.bitdegree.org/learn/css-form
+
+<input type="text">
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/text
+
+how to change border color of input box on focus html
+https://www.w3schools.com/css/tryit.asp?filename=trycss_form_focus2
+
+CSS Box Sizing
+https://www.w3schools.com/css/css3_box-sizing.asp
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PHP :-																												| PHP |
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Sites -																													Sites
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+How to Run a PHP Script? Step By Step Guide!
+https://codeofaninja.com/2013/06/how-to-run-a-php-script.html
+
+Relative and absolute paths, in the file system and on the web server.
+https://phpdelusions.net/articles/paths
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Videos -																												Videos
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Top 12 VScode Extensions for PHP
+https://www.youtube.com/watch?v=v9dWFbiir9Q
+
+How to Make Login Form in PHP and MySQL (login in php)
+https://www.youtube.com/watch?v=aIsu9SPcGbU
+
+CRUD Operation in PHP MySQLi In Hindi | Select Insert Update Delete in PHP MySQLi in Hindi
+https://www.youtube.com/watch?v=y5mBHPtEO5w
+
+PHP CRUD || Create, Read, Update, Delete.
+https://www.youtube.com/watch?v=72U5Af8KUpA
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Tipa -																													Tipa  
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+onclick ha HTML event ahe jo javascript function call karnyasathi vaprla jato, php ch function call karnysathi apan he vaprl nahi.
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Search -																												Search
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+employee registration form
+
+worker types on petrol pump
+
+What do petrol station workers do?
+https://www.inputyouth.co.uk/jobguides/job-petrolservicesalesassistant.html
+
+https://css-tricks.com/oh-hey-padding-percentage-is-based-on-the-parent-elements-width/
+
+HeyTuts
+11.4K subscribers
+
+PhpStorm IDE
+
+calling function on button click php
+ 
+popup in php
+
+include		require 		print_r 		var_dump
+
+changing color of button on click (Add a "pressed" effect on click:)
+
+char vs char(2) ahe kanahi baghne ani asel tr farak baghne 
+int vs int(3) baghne
+
+hover selector ahe ka pseudo class ahe te baghne
+https://www.w3schools.com/cssref/sel_hover.asp
+https://www.w3schools.com/css/css_pseudo_classes.asp
+
+What is %20 in a URL?
+
+crud operation php sathi changlya code vali site baghne.
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") ani if(isset($_POST['submit'])) doghanmadhla farak baghne
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Other -																													Other
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+General words for workers and types of worker
+https://www.macmillandictionary.com/thesaurus-category/british/general-words-for-workers-and-types-of-worker
+
+How to center a button in CSS?
+https://www.javatpoint.com/how-to-center-a-button-in-css
+
+info about width
+https://www.w3.org/TR/CSS2/visudet.html#propdef-width
+
+How To Create Transparent Login Form Using HTML and CSS | HTML Form
+https://www.youtube.com/watch?v=-RbkNcDwKbc
+
+Transparent Login Form - HTML & CSS ONLY
+https://www.youtube.com/watch?v=X9Eh7_FUYzw
+
+Normalization - 1NF, 2NF, 3NF and 4NF
+https://www.youtube.com/watch?v=UrYLYV7WSHM
+
+How to Correctly Define Many-To-Many Relationships in Database Design
+https://www.youtube.com/watch?v=1eUn6lsZ7c4
+
+SQL script to insert into many to many table - kudvenkat 709K subscribers
+https://www.youtube.com/watch?v=cEfjYynwooE
+
+Difference between Single Quote and Double Quote in PHP (Hindi)
+https://www.youtube.com/watch?v=W8I4ZbAplOo
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Screens - 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1 Main screen - Employee or Customer
+2 Employee screen 
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Stithi -																														Stithi
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Zal :- 
+DB connection with MYSQLi object oriented, procedural nahi kel jevva karay lagal tevva baghu
+
+Karaych :-
+Function call on button click
+empty
+isset
+PHP input text validations
+
+Sadhya sagale function run hot ahet ani alert popup hot ahet te zale nahit hysathi kahitri baghane
+Button vr click kelyashivay kahi vhyayla nahi pahije as karne
+youtube search - function call on button click php
+Hyavr jr barach vel solution nahi sapdal tr pudhchi kame karne
+
+how to pass data from one page to another in php
+how to enter php and html in one statement
+<?php $a = "Pawar";	?>
+<h1> Hello <?php $a ?></h1>
+<?php echo"<h1> Hello $a </h1>"; ?>
+
+session in php
+
+https://www.youtube.com/results?search_query=using+icons+in+html
+
+https://www.youtube.com/watch?v=_t9iLQXgQhk
+
+Audio Library — Music for content creators
+
+Warning: Undefined variable $conn in C:\xampp\htdocs\petrol\HTML\login.php on line 87
+
+Fatal error: Uncaught Error: Call to a member function query() on null in C:\xampp\htdocs\petrol\HTML\login.php:87 Stack trace: #0 C:\xampp\htdocs\petrol\HTML\login.php(45): fLogin() #1 {main} thrown in C:\xampp\htdocs\petrol\HTML\login.php on line 87
+
+petrol backup folder delete karne
+
+Fuel chi kimmat badlnyasathi functionality dene
+
+Stock
+1) Petrol
+2) Rockel
+3) Disel
+4) CNG
+
+
+Supplier
+1) Nikhil
+2)Ameya
+3)Yash
+4)Shreyash
+
+Sup_sto
+id su st  when supplied date
+1	1  1
+2	1  4
+3	1  1
+4	3  2
+5	4  3
+6	4  1
+7	1	1
+
+Supplier 
+su_id, name, address 
+
+Stock
+st_id, type, quantiy, date, *price
+
+Supplier_Stock / Import
+id, su_id, st_id, date, quantiy, price
+
+Fuel price
+id, fuel, import_price, export_price
+
+Sell / Export
+id, se_type, se_quantity, se_price, se_date
+
+MySQL: vs SQL Server / Oracle / MS Access: ha ek code createDB.php madhe lihine
+https://www.w3schools.com/sql/sql_foreignkey.asp
+
+join(many to many relationship) table UML diagram madhe dakhavtat ka nahi baghne.
+
+https://stackoverflow.com/questions/16210389/normalization-of-many-to-many-relation-in-sql
+
+https://www.geeksforgeeks.org/composite-key-in-sql/
+
+Apan jr stock import kartana su_st_id, su_id, st_id, date, quantiy, price yamadhe import_price_per_liter he ajun ek field ghetal tr aplyala supplierchi tyaveleschi updated price kalal tasach apan export kartana pn karu shakto. id, se_type, se_quantity, se_price, se_date madhe export_price_per_liter taku shakto mhanje ti pn tyvaleschi updated pirce asel.
+He kelyane Fuel price navacha table jyat apan tharvleli import export price ahe to kadhun takta yeyil.
+
+Database tayar kartana eka table ch implementation Mysql ani sql server, oracle, Ms access saglyanmadhe lihine
+Foreign key lihitana syntax madhe chuk ka dakhvat ahe vicharne 2 paiki ek syntax lihitana
+console.log kartana table ch nav print karta yet ka baghne
+
+Ekach file madhe html ani php code lihila tr hi error yet ahe 
+: Undefined array key "email" in
+https://stackoverflow.com/questions/65541232/php-form-using-post-error-undefined-array-key-however-it-works-when-i-use-get
+Aplyala code ekach panavr pahije ka veglya te baghne 
+
+PHP form validation without resetting all other values
+https://stackoverflow.com/questions/36019137/php-form-validation-without-resetting-all-other-values
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ // $dName = $_POST['name'];
+    // $dPhoneNo = $_POST['phoneNo'];
+    // $dDesignation = $_POST['typeOfWork'];
+    // $dEmail = $_POST['email'];
+    // $dAddress = $_POST['address'];
+    // $dBirthDate = $_POST['birthDate'];
+    // $dGender = $_POST['gender'];
+
+    // if(isset($_POST['btn']))
+    // {
+    //     addEmployee();
+    // }
+
+    // function addEmployee()
+    // {   
+    //     require '../PHP/connect.php';
+        
+    //     // echo '<script> window.location.href="./addEmployee.php"</script>';
+    // }
+
+
+
+    // $dName = $_POST['name'];
+    // $dPhoneNo = $_POST['phoneNo'];
+    // $dTypeOfWork = $_POST['typeOfWork'];
+    // $dEmail = $_POST['email'];
+    // $dAddress = $_POST['address'];
+    // $dBirthDate = $_POST['birthDate'];
+    // $dGender = $_POST['gender'];
+    // echo $dName;
+    // echo $dPhoneNo;
+    // echo $dtypeOfWork;
+    // echo $dEmail;
+    // echo $dAddress;
+    // echo $dBirthDate;
+    // echo $dGender;
+    // echo nl2br("$dName \n");
+    // echo nl2br("$dPhoneNo \n");
+    // echo nl2br("$dTypeOfWork \n");
+    // echo nl2br("$dEmail \n");
+    // echo nl2br("$dAddress \n");
+    // echo nl2br("$dBirthDate \n");
+    // echo nl2br("$dGender \n");
+
+$dName =  $dPhoneNo = $dDesignation = $dEmail = $dAddress = $dBirthDate = $dGender = "";
+$dNameErr = $dPhoneNoErr = $dTypeOfWorkErr = $dEmailErr = $dAddressErr = $dBirthDateErr = $dGenderErr = "";
+
+$n =$m=$S=$t=$x=$v=$g="";
+    $n =$m=$S=$t=$x=$v=$g="A";
+    if($n=="" && $m=="" &&$S=="" && $t=="" && $x=="" && $v=="" && $g =="")
+    {
+        echo '<script> console.log("$n, $m are set to 2")</script>';    
+    }
+    elseif($n=="A" && $m=="A" && $S=="A" && $t=="A" && $x=="A" && $v=="A" && $g =="A")
+    {
+        echo '<script> console.log("$n, $m are set to 3")</script>';    
+    }
+    else
+    {
+        echo '<script> console.log("ERROR")</script>';    
+    }
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+dropdown reset hot ahe validation error marlyanantr tyasathi (sticky form baghne) -
+https://www.youtube.com/results?search_query=php+validation+without+resetting+dropdown+value
+
+autocomplete = "off" baghne
+
+query fail zalyanantr else loop madhla code run ka hot nahi te baghne ani update nahi kela to karne
+query madhe date lihitana string mhanun det ahot apan mg te brobr ahe ka nahi te baghne
+	
+	
+The DUFF
+John Tucker Must Die
+Get Over It
+Tamara 2005
+
+Manage stock madhe apan db madhun data dakhavat nahi to dakhvne
+Manage import madhe pn tasach baghne
+Import table cha frontend chalu ahe sadhya
+createDB madhe navin navanusar table tayar hot ahet ani apan petrol4 vr operate karat ahot ith error hou shakte
+delete page employee ani supplier ch ekach pahije mhanun apan baghat hoto pn kuthal record delete zalay he js sangat ani js ani php cha mel basat nahi mahun apan donhi page vegle kele ahet
+
+
+when to use quote and double quote hindi 
+github use
+kaymch subtitile ks  ghalaych baghne she is the man

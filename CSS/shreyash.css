@@ -1,0 +1,21 @@
+.buttonContainer {
+    display: flex;
+}
+
+.testFlex {
+    display: flex;
+}
+
+
+@media (max-width: 426px)
+{
+    .head {
+        color: aquamarine;
+    }
+    .buttonContainer {
+        display: block;
+    }
+    .testFlex {
+        display: block;
+    }
+}
