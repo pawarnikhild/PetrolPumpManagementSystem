@@ -152,7 +152,7 @@
                 // echo nl2br("Values inserted in table successfully\n");
                 echo '<script> alert("New employee added successfully")</script>';
                 echo '<script> console.log("Values inserted in Login table successfully"); </script>';
-                // echo '<script> window.location.href="./manageEmployee.php"</script>';
+                echo '<script> window.location.href="./manageEmployee.php"</script>';
             }
             else
             {

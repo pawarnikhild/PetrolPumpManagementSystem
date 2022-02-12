@@ -6,7 +6,7 @@
         $host = "localhost";
         $username = "root";
         $password = "";
-        $db = "petrol4";
+        $db = "petrol5";
         // global $conn;
         $conn = new mysqli($host, $username, $password, $db);
         if (!$conn->connect_error)

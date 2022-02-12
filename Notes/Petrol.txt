@@ -68,7 +68,7 @@ https://www.youtube.com/watch?v=72U5Af8KUpA
 Tipa -																													Tipa  
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 onclick ha HTML event ahe jo javascript function call karnyasathi vaprla jato, php ch function call karnysathi apan he vaprl nahi.
-
+id sathi AUTO INCREMENT jr dil nahi tr id 0 pasun chalu hoto ani dil tr 1 pasun chalu hoto 
 
 
 
@@ -112,6 +112,9 @@ crud operation php sathi changlya code vali site baghne.
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") ani if(isset($_POST['submit'])) doghanmadhla farak baghne
 
+multiple join search karne  ani JOIN Three Tables ky ahe baghane https://www.w3schools.com/sql/sql_join_inner.asp 
+
+regex vishay baghane
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Other -																													Other
@@ -340,3 +343,6 @@ delete page employee ani supplier ch ekach pahije mhanun apan baghat hoto pn kut
 when to use quote and double quote hindi 
 github use
 kaymch subtitile ks  ghalaych baghne she is the man
+
+PHP Interview Question #2: Difference between Single Quotes and Double Quotes in PHP in Hindi #19
+https://www.youtube.com/watch?v=ShRDo9DcvUs

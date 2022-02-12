@@ -3,12 +3,15 @@
     <title>createDB</title>
 </head>
 <body>
-    
+    <h1>Welcone</h1>
+    <h2>This is starting of the project</h2>
 </body>
 </html>
 <?php
 
 // This file is executed first in the whole project. This file creates all tables that are required for project.
+    $date = date('d/m/Y');
+    echo nl2br("Today's date is $date\n");
 // --------------------------------------------------------------------------------------------------------------------------------
 // Creating MySQL connection
 // --------------------------------------------------------------------------------------------------------------------------------    
@@ -125,7 +128,7 @@
     // Table 5: Import(Supplier_Stock) // This table is created because supplier and stock tables have many to many relationship
     $table = "Import";
     $sql = "CREATE TABLE Import(
-        import_id INT PRIMARY KEY,
+        import_id INT AUTO_INCREMENT PRIMARY KEY,
         import_date DATE,
         supplier_id INT,
         stock_id INT,
@@ -136,7 +139,7 @@
         -- stock_id INT FOREIGN KEY REFERENCES Stock(stock_id),
         import_price_per_liter INT NOT NULL,
         import_quantity INT NOT NULL,
-        impoert_price INT NOT NULL
+        import_price INT NOT NULL
         
         )";
     createTable($conn, $table, $sql);
@@ -175,7 +178,7 @@
 // Inserting default values in Stock table
 // --------------------------------------------------------------------------------------------------------------------------------
 $date = date('Y/m/d');
-echo $date;
+// echo $date;
 
 $sql = "INSERT INTO Stock (stock_id, stock_date, stock_name, stock_quantity) VALUES 
 (1, '$date', 'Petrol', 0),

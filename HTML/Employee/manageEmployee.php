@@ -57,7 +57,7 @@ $result = $conn->query($sql);
                         <td> <?php echo $row["employee_typeofwork"]; ?> </td>
                         <td> <?php echo $row["employee_email"]; ?> </td>
                         <td> <?php echo $row["employee_address"]; ?> </td>
-                        <td> <?php echo date('d-m-Y', strtotime($row["employee_birthdate"])); ?> </td>
+                        <td> <?php echo date('d/m/Y', strtotime($row["employee_birthdate"])); ?> </td>
                         <td> <?php echo $row["employee_gender"]; ?> </td>
                         <td>
                             <!-- <div class='actions'> -->

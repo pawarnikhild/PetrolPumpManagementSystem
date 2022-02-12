@@ -1,170 +1,157 @@
 <?php
     require '../../../PHP/connect.php';
-    $sql = "SELECT supplier_name FROM Supplier";
+    $sql = "SELECT supplier_id, supplier_name FROM Supplier";
     $result = $conn->query($sql);
-    $sql1 = "SELECT stock_name FROM Stock";
+    $sql1 = "SELECT stock_id, stock_name FROM Stock";
     $result1 = $conn->query($sql1);
     // var_dump($result);
     // var_dump($result1);
 
-    $nameErr = $phoneNoErr = $typeOfWorkErr = $emailErr = $addressErr = $birthDateErr = $genderErr = "";
-    $supplierName =  $phoneNo = $typeOfWork = $email = $address = $birthDate = $gender = "";
+    // $nameErr = $phoneNoErr = $typeOfWorkErr = $emailErr = $addressErr = $birthDateErr = $genderErr = "";
+    // $supplierName =  $phoneNo = $typeOfWork = $email = $address = $birthDate = $gender = "";
+    $importDate = $supplierId = $stockId = $importPricePerLiter = $importQuantity = $importPrice ="";
+    $importDateErr = $supplierIdErr = $stockIdErr = $importPricePerLiterErr = $importQuantityErr = $importPriceErr ="";
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") 
     {
-        $name = test_input($_POST['name']);
-        $phoneNo = test_input($_POST['phoneNo']);
-        $typeOfWork = test_input($_POST['typeOfWork']);
-        $email = test_input($_POST['email']);
-        $address = test_input($_POST['address']);
-        $birthDate = test_input($_POST['birthDate']);
-        $gender = test_input($_POST['gender']);
-        
-        // //Saglyasathi ekach if loop madhe || saglya condition deta yetil ka baghne empty sathi fakt
+        $importDate = test_input($_POST['importDate']);
+        $supplierId = test_input($_POST['supplierId']);
+        $stockId = test_input($_POST['stockId']);
+        $importPricePerLiter = test_input($_POST['importPricePerLiter']);
+        $importQuantity = test_input($_POST['importQuantity']);
+        $importPrice = test_input($_POST['importPrice']);
 
-        // Name validation
-        if(empty($_POST['name']))
+        // importDate (Empty)validation
+        if(empty($_POST['importDate']))
         {
-            $nameErr = "Name is required";
+            $importDateErr = "Import Date is required";
         }
         else
         {
-            $name = test_input($_POST['name']);
-            // check if name only contains letters and whitespace  
-            if (!preg_match("/^[a-zA-Z ]*$/",$name)) {  
-                $nameErr = "Only alphabets and white space are allowed";  
-            }  
+            $importDate = test_input($_POST['importDate']);
         }
 
-        // Phone number validation
-        if(empty($_POST['phoneNo']))
+        // supplierId (Empty)validation
+        if(empty($_POST['supplierId']))
         {
-            $phoneNoErr = "Phone number is required";
+            $supplierIdErr = "Supplier Id is required";
         }
         else
         {
-            $phoneNo = test_input($_POST['phoneNo']);
+            $supplierId = test_input($_POST['supplierId']);
+        }
+
+        // stockId (Empty)validation
+        if(empty($_POST['stockId']))
+        {
+            $stockIdErr = "stockId Id is required";
+        }
+        else
+        {
+            $stockId = test_input($_POST['stockId']);
+        }
+
+        // importPricePerLiter validation
+        if(empty($_POST['importPricePerLiter']))
+        {
+            $importPricePerLiterErr = "importPricePerLiter is required";
+        }
+        else
+        {
+            $importPricePerLiter = test_input($_POST['importPricePerLiter']);
             // check if mobile no is well-formed  
-            if (!preg_match ("/^[0-9]*$/", $phoneNo)) {  
-                $phoneNoErr = "Only numeric value is allowed.";  
+            if (!preg_match ("/^[0-9]*$/", $importPricePerLiter)) {  
+                $importPricePerLiterErr = "Only numeric value is allowed.";  
+            }
+        }
+        // importQuantity validation
+        if(empty($_POST['importQuantity']))
+        {
+            $importQuantityErr = "Quantity is required";
+        }
+        else
+        {
+            $phoneNo = test_input($_POST['importQuantity']);
+            // check if mobile no is well-formed  
+            if (!preg_match ("/^[0-9]*$/", $importQuantity)) {  
+                $importQuantityErr = "Only numeric value is allowed.";  
+            }
+        }
+        // importPrice validation
+        if(empty($_POST['importPrice']))
+        {
+            $importPriceErr = "ImportPrice is required";
+        }
+        else
+        {
+            $phoneNo = test_input($_POST['importPrice']);
+            // check if mobile no is well-formed  
+            if (!preg_match ("/^[0-9]*$/", $importPrice)) {  
+                $importPriceErr = "Only numeric value is allowed.";  
             }
         }
 
-        // Type of work (empty)validation
-        if(empty($_POST['typeOfWork']))
-        {
-            $typeOfWorkErr = "Type of Work is required";
-        }
-        else
-        {
-            $typeOfWork = test_input($_POST['typeOfWork']);
-        }
-
-        // Email validation
-        if(empty($_POST['email']))
-        {
-            $emailErr = "Email is required";
-        }
-        else
-        {
-            $email = test_input($_POST['email']);
-            // check that the e-mail address is well-formed  
-            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {  
-                $emailErr = "Invalid email format";  
-            }
-        }
-
-        // Address (empty)validation
-        if(empty($_POST['address']))
-        {
-            $addressErr = "Address is required";
-        }
-        else
-        {
-            $address = test_input($_POST['address']);
-        }
-
-        // Birth date (empty)validation
-        if(empty($_POST['birthDate']))
-        {
-            $birthDateErr = "Birth Date is required";
-        }
-        else
-        {
-            $birthDate = test_input($_POST['birthDate']);
-            // $birthDate = date('d-m-Y', strtotime(($_POST['birthDate']))); // In sql db date is stored in 'YYYY-MM-DD' fromat we tried
-            // to change format in this statement but it gives error, hence we are formatting date in manageEmployee.php file as 'DD-MM-YYYY'.
-        }
-
-        // Gender (empty)validation
-        if(empty($_POST['gender']))
-        {
-            $genderErr = "Gender is required";
-        }
-        else
-        {
-            $gender = test_input($_POST['gender']);
-        }
         // echo $nameErr;
         // echo $phoneNoErr;
         // echo $genderErr;
-        if($nameErr == "" && $phoneNoErr == "" && $typeOfWorkErr == "" && $emailErr == "" && $addressErr == "" && $birthDateErr == "" && $genderErr == "") {  
-            echo "Name: " .$name;  
-            echo "<br>";  
-            echo "Mobile No: " .$phoneNo;  
-            echo "<br>";  
-            echo "TypeOfWorkErr: " .$typeOfWork;
-            echo "<br>";  
-            echo "Email: " .$email;  
-            echo "<br>";  
-            echo "Address: " .$address;  
-            echo "<br>";  
-            echo "BirthDate: " .$birthDate;
-            echo "<br>";  
-            echo "Gender: " .$gender;
-            echo "<br>";
-            echo "<br>";
+        
+    // $importDateErr = $supplierIdErr = $stockIdErr = $importPricePerLiterErr = $importQuantityErr = $importPriceErr ="";
+
+        if($importDateErr == "" && $supplierIdErr == "" && $stockIdErr == "" && $importPricePerLiterErr == "" && $importQuantityErr == ""
+           && $importPriceErr == "")
+        {  
+            // echo "Name: " .$name;  
+            // echo "<br>";  
+            // echo "Mobile No: " .$phoneNo;  
+            // echo "<br>";  
+            // echo "TypeOfWorkErr: " .$typeOfWork;
+            // echo "<br>";  
+            // echo "Email: " .$email;  
+            // echo "<br>";  
+            // echo "Address: " .$address;  
+            // echo "<br>";  
+            // echo "BirthDate: " .$birthDate;
+            // echo "<br>";  
+            // echo "Gender: " .$gender;
+            // echo "<br>";
+            // echo "<br>";
             
-            echo "NameErr: " .$nameErr;  
-            echo "<br>";  
-            echo "Mobile NoErr: " .$phoneNoErr;  
-            echo "<br>";  
-            echo "TypeOfWorkErr: " .$typeOfWorkErr;
-            echo "<br>";  
-            echo "EmailErr: " .$emailErr;  
-            echo "<br>";  
-            echo "AddressErr: " .$addressErr;  
-            echo "<br>";  
-            echo "BirthDateErr: " .$birthDateErr;
-            echo "<br>";  
-            echo "GenderErr: " .$genderErr;  
-            echo "<br>";
+            // echo "NameErr: " .$nameErr;  
+            // echo "<br>";  
+            // echo "Mobile NoErr: " .$phoneNoErr;  
+            // echo "<br>";  
+            // echo "TypeOfWorkErr: " .$typeOfWorkErr;
+            // echo "<br>";  
+            // echo "EmailErr: " .$emailErr;  
+            // echo "<br>";  
+            // echo "AddressErr: " .$addressErr;  
+            // echo "<br>";  
+            // echo "BirthDateErr: " .$birthDateErr;
+            // echo "<br>";  
+            // echo "GenderErr: " .$genderErr;  
+            // echo "<br>";
             echo '<script> console.log("Succes"); </script>';
             echo '<script> alert("Inserted all fields")</script>';
 
-            require '../../PHP/connect.php';
+            require '../../../PHP/connect.php';
             // var_dump($conn);
+            							
 
-            // When we have given auto-incrementing primary key id in table(meaning we are not taking it as input from user) then we must
-            // provide the names of the columns we want to fill. Example: 
-            // insert into tabl_name (column_name2, column_name3) values (value2, value3)
-            // So our table contains 8 columns and we are providing only 7 values along with their specific column name. And by auto-incremented 
-            // id all 8 fields of table are getting fulfilled.
-            $sql = "INSERT INTO Employee
-            (employee_name, employee_phoneno, employee_typeofwork, employee_email, employee_address, employee_birthdate, employee_gender)
-            VALUES ('$name', '$phoneNo', '$typeOfWork', '$email', '$address', '$birthDate', '$gender')";
+            $sql = "INSERT INTO Import
+            (import_date, supplier_id, stock_id, import_price_per_liter, import_quantity, import_price)
+            VALUES ('$importDate', '$supplierId', '$stockId', '$importPricePerLiter', '$importQuantity', '$importPrice')";
 
             if ($conn->query($sql) === TRUE)
             {
                 // echo nl2br("Values inserted in table successfully\n");
-                echo '<script> alert("New employee added successfully")</script>';
-                echo '<script> console.log("Values inserted in Login table successfully"); </script>';
-                echo '<script> window.location.href="./manageEmployee.php"</script>';
+                echo '<script> alert("New import record added successfully")</script>';
+                echo '<script> console.log("Values inserted in Import table successfully"); </script>';
+                echo '<script> window.location.href="./manageImport.php"</script>';
             }
             else
             {
                 die("Failed to create table $table : " . $con->connect_error);
-                echo '<script> alert("Error in adding employye please try again")</script>';
+                echo '<script> alert("Error in adding import record please try again")</script>';
                 echo '<script> console.log("Failed to insert values in table<br>ERROR : $conn->connect_error"); </script>';
             }
             // echo '<script> console.log("Code is running"); </script>';
@@ -252,14 +239,13 @@
             <h2>Import Fuel</h2>
             <div class="FlexC">
                 <div class="NameandInputC">
-                    <span class="inputName">Name</span><br>
-                    <input type="text" name="name" placeholder="Name" value="<?php echo $name;?>">
-                    <span class="error"> <?php echo $nameErr; ?> </span>  
+                        <span class="inputName">Import Date</span><br>
+                            <input type="date" name="importDate" placeholder="Import date" value="<?php echo $importDate;?>">
+                        <span class="error"> <?php echo $importDateErr; ?> </span>  
                 </div>
-                
                 <div class="NameandInputC">
                     <span class="inputName">Supplier Name</span><br>
-                    <select name="supplierName" id="SupplierName"  value="<?php echo $supplierName;?>">
+                    <select name="supplierId" id="SupplierName"  value="<?php echo $supplierId;?>">
                         <option value="">--Please choose an option--</option>
                         <?php
                             if($result->num_rows > 0)
@@ -267,10 +253,9 @@
                                 while($row = $result->fetch_assoc())
                                 {
                                     // echo "<tr><td>".$row["supplier_name"]."</td>";
-                                    echo $row["supplier_name"];
+                                    // echo $row["supplier_name"];
                         ?>
-                        <option value="<?php echo $row["supplier_name"]; ?>"><?php echo $row["supplier_name"]; ?></option>
-                        
+                        <option value="<?php echo $row["supplier_id"]; ?>"><?php echo $row["supplier_id"]." ". $row["supplier_name"]; ?></option>
                         <?php            
                                 }   
                             }
@@ -283,11 +268,11 @@
                             }
                         ?>    
                     </select>
-                    <span class="error"> <?php echo $typeOfWorkErr; ?> </span>  
+                    <span class="error"> <?php echo $supplierIdErr; ?> </span>  
                 </div>
                 <div class="NameandInputC">
                     <span class="inputName">Fuel Type</span><br>
-                    <select name="stockName" id="StockName"  value="<?php echo $stockName;?>">
+                    <select name="stockId" id="StockName"  value="<?php echo $stockId;?>">
                         <option value="">--Please choose an option--</option>
                         <?php
                             if($result1->num_rows > 0)
@@ -296,7 +281,7 @@
                                 {
                                     // echo "<tr><td>".$row["supplier_name"]."</td>";
                         ?>
-                        <option value="<?php echo $row1["stock_name"]; ?>"><?php echo $row1["stock_name"]; ?></option>
+                        <option value="<?php echo $row1["stock_id"]; ?>"><?php echo $row1["stock_name"]; ?></option>
                         <?php            
                                 }   
                             }
@@ -309,43 +294,23 @@
                             }
                         ?>    
                     </select>
-                    <span class="error"> <?php echo $typeOfWorkErr; ?> </span>  
-                </div>
-
-                <div class="NameandInputC">
-                    <span class="inputName">Email Address<br>
-                        <input type="email" name="email" placeholder="Email" value="<?php echo $email;?>"><br>
-                        <span class="error"> <?php echo $emailErr; ?> </span>  
-                </div>
-                
-            </div>
-            <div class="NameandInputCforAddress">
-                <span class="inputName">Address</span><br>
-                <input type="text" name="address" placeholder="Address" value="<?php echo $address;?>">
-                <span class="error"> <?php echo $addressErr; ?> </span>  
-            </div>
-            <div class="FlexC">
-            <div class="NameandInputC">
-                    <span class="inputName">Import Date</span><br>
-                    <input type="date" name="importDate" placeholder="Import date" value="<?php echo $importDate;?>">
-                    <span class="error"> <?php echo $birthDateErr; ?> </span>  
+                    <span class="error"> <?php echo $stockIdErr; ?> </span>  
                 </div>
                 <div class="NameandInputC">
-                    <span class="inputName">Phone Number</span><br>
-                    <input type="text" name="importPricePerLiterphoneNo" placeholder="Phone no" value="<?php echo $phoneNo;?>">
-                    <span class="error"> <?php echo $phoneNoErr; ?> </span>  
+                    <span class="inputName">Price Per Liter</span><br>
+                    <input type="text" name="importPricePerLiter" placeholder="Price Per Liter" value="<?php echo $importPricePerLiter;?>">
+                    <span class="error"> <?php echo $importPricePerLiterErr; ?> </span>  
                 </div>
                 <div class="NameandInputC">
-                    <span class="inputName">Gender</span><br>
-                    <select name="gender" id="gender">
-                        <option value="">--Please choose an option--</option>
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                        <option value="Other">Other</option>
-                    </select>
-                    <span class="error"> <?php echo $genderErr; ?> </span>  
+                    <span class="inputName">Quantity</span><br>
+                    <input type="text" name="importQuantity" placeholder="Quantity" value="<?php echo $importQuantity;?>">
+                    <span class="error"> <?php echo $importQuantityErr; ?> </span>  
                 </div>
-                
+                <div class="NameandInputC">
+                    <span class="inputName">Total Price</span><br>
+                    <input type="text" name="importPrice" placeholder="Total Price" value="<?php echo $importPrice;?>">
+                    <span class="error"> <?php echo $importPriceErr; ?> </span>  
+                </div>
             </div>
             <div class="buttonC">
                 <button type="submit" value="Register" name="btn">Register</button>

@@ -1,7 +1,7 @@
 <?php 
-// require '../../PHP/connect.php';
-// $sql = "SELECT * FROM Supplier";
-// $result = $conn->query($sql);
+require '../../PHP/connect.php';
+$sql = "SELECT * FROM Stock";
+$result = $conn->query($sql);
 ?>
 
 <!DOCTYPE html>
@@ -27,13 +27,13 @@
             <th>Fuel type</td>
             <th>Date</td>
             <th>Quantity</td>
-            <th>Actions</th>
+            <!-- <th>Actions</th> -->
         </tr>
         <?php
-            // if($result->num_rows > 0)
-            // {
-            //     while($row = $result->fetch_assoc())
-            //     {
+            if($result->num_rows > 0)
+            {
+                while($row = $result->fetch_assoc())
+                {
                     // echo "<tr><td>".$row["supplier_name"]."</td>";
                     // echo "<td>".$row["supplier_phoneno"]."</td>";
                     // echo "<td>".$row["supplier_address"]."</td>";
@@ -47,32 +47,27 @@
                     // echo "</tr>";
         ?>
                     <tr>
-                        <!-- <td > <?php echo $row["supplier_id"]; ?> </td>
-                        <td> <?php echo $row["supplier_name"]; ?> </td>
-                        <td> <?php echo $row["supplier_phoneno"]; ?> </td>
-                        <td> <?php echo $row["supplier_address"]; ?> </td>
-                        <td> -->
-                        <td>2</td>
-                        <td>05-02-2022</td>
+                        <td> <?php echo $row["stock_id"]; ?> </td>
+                        <td> <?php echo $row["stock_date"]; ?> </td>
+                        <td> <?php echo $row["stock_name"]; ?> </td>
+                        <td> <?php echo $row["stock_quantity"]; ?> </td>
+                        <!-- <td>2</td>
                         <td>Petrol</td>
+                        <td>05-02-2022</td>
                         <td>2000Ltr</td>
                         <td>
-                            <!-- <div class='actions'> -->
-                            <!-- $dBirthDate = date('d-m-Y', strtotime($row["supplier_birthdate"])); -->
                             <a href="./updateSupplier.php?id=<?php echo $row["supplier_id"];?>" id='edit'> <i class='fas fa-pen' ></i></a>
-                            <!-- <i class='fas fa-trash-alt' id='delete'></i> -->
+                            <i class='fas fa-trash-alt' id='delete'></i>
                             <a href="./deleteSupplier.php?id=<?php echo $row["supplier_id"];?>" id='delete'> <i class='fas fa-trash' ></i></a>
-
-                            <!-- </div> -->
-                        </td>
+                        </td> -->
                     </tr>
         <?php            
-            //     }   
-            // }
-            // else
-            // {
-            //     echo "<th colspan='8' style='margin-top: 50px;'> There is no data in databse please click Add Supplier button to insert</th>";
-            // }
+                }   
+            }
+            else
+            {
+                echo "<th colspan='8' style='margin-top: 50px;'> There is no data in databse(ERROR: table stock is not created)</th>";
+            }
         ?>
     </table>
 </body>
