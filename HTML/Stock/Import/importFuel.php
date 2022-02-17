@@ -14,13 +14,15 @@
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") 
     {
-        $importDate = test_input($_POST['importDate']);
-        $supplierId = test_input($_POST['supplierId']);
-        $stockId = test_input($_POST['stockId']);
-        $importPricePerLiter = test_input($_POST['importPricePerLiter']);
-        $importQuantity = test_input($_POST['importQuantity']);
-        $importPrice = test_input($_POST['importPrice']);
-
+        function test_input($data)
+        {
+            $data = trim($data);
+            $data = stripslashes($data);
+            $data = htmlspecialchars($data);
+            return $data;
+        }
+        
+        // Following code is for validation and assignment after validation of variables
         // importDate (Empty)validation
         if(empty($_POST['importDate']))
         {
@@ -44,7 +46,7 @@
         // stockId (Empty)validation
         if(empty($_POST['stockId']))
         {
-            $stockIdErr = "stockId Id is required";
+            $stockIdErr = "Stock Id is required";
         }
         else
         {
@@ -54,11 +56,32 @@
         // importPricePerLiter validation
         if(empty($_POST['importPricePerLiter']))
         {
-            $importPricePerLiterErr = "importPricePerLiter is required";
+            $importPricePerLiterErr = "ImportPricePerLiter is required";
         }
         else
         {
             $importPricePerLiter = test_input($_POST['importPricePerLiter']);
+            echo "<script>
+            console.log('After php');
+            var jIPPL = '<?php echo $importPricePerLiter;?>';
+            console.log('adsfadsf');
+            console.log('jIPPL: '+jIPPL);
+             </script>";
+            // echo "<script> console.log('asdfasdf');</script>";
+            echo "<script> 
+            console.log('2nd');
+            // console.log('adsfadsf');
+            // var jIPPL = undefined;
+            // jIPPL = '<? php echo $importPricePerLiter;?>';
+            var jPPL = <?php echo json_encode($importPricePerLiter); ?>;
+            console.log('jPPL:' jPPL);
+            </script>";
+            echo "<script>
+            console.log('adsfadsf');
+            var jIPPL = <? php echo $importPricePerLiter?>;
+            console.log('adsfadsf');
+            console.log('jIPPL: '+jIPPL);
+             </script>";
             // check if mobile no is well-formed  
             if (!preg_match ("/^[0-9]*$/", $importPricePerLiter)) {  
                 $importPricePerLiterErr = "Only numeric value is allowed.";  
@@ -71,65 +94,45 @@
         }
         else
         {
-            $phoneNo = test_input($_POST['importQuantity']);
+            $importQuantity = test_input($_POST['importQuantity']);
             // check if mobile no is well-formed  
             if (!preg_match ("/^[0-9]*$/", $importQuantity)) {  
                 $importQuantityErr = "Only numeric value is allowed.";  
             }
         }
         // importPrice validation
+        $importPrice = $_COOKIE['Cookie'];
         if(empty($_POST['importPrice']))
         {
             $importPriceErr = "ImportPrice is required";
         }
         else
         {
-            $phoneNo = test_input($_POST['importPrice']);
+            $importPrice = test_input($_POST['importPrice']);
             // check if mobile no is well-formed  
             if (!preg_match ("/^[0-9]*$/", $importPrice)) {  
                 $importPriceErr = "Only numeric value is allowed.";  
             }
         }
 
-        // echo $nameErr;
-        // echo $phoneNoErr;
-        // echo $genderErr;
-        
-    // $importDateErr = $supplierIdErr = $stockIdErr = $importPricePerLiterErr = $importQuantityErr = $importPriceErr ="";
+        // echo $phoneNo;
+        // echo "<br>";  
+        echo $importPrice;
+        // echo "<br>";  
+        // echo $importPriceErr;
+        echo "<script>
+            console.log('In php');
+            var jIPPL = <?php echo $importPricePerLiter?>;
+            console.log('adsfadsf');
+            console.log('jIPPL: '+jIPPL);
+             </script>";
 
-        if($importDateErr == "" && $supplierIdErr == "" && $stockIdErr == "" && $importPricePerLiterErr == "" && $importQuantityErr == ""
-           && $importPriceErr == "")
+        if($importDateErr == "" && $supplierIdErr == "" && $stockIdErr == "" && $importPricePerLiterErr == "" &&
+           $importQuantityErr == "" && $importPriceErr == "")
         {  
             // echo "Name: " .$name;  
             // echo "<br>";  
-            // echo "Mobile No: " .$phoneNo;  
-            // echo "<br>";  
-            // echo "TypeOfWorkErr: " .$typeOfWork;
-            // echo "<br>";  
-            // echo "Email: " .$email;  
-            // echo "<br>";  
-            // echo "Address: " .$address;  
-            // echo "<br>";  
-            // echo "BirthDate: " .$birthDate;
-            // echo "<br>";  
-            // echo "Gender: " .$gender;
-            // echo "<br>";
-            // echo "<br>";
             
-            // echo "NameErr: " .$nameErr;  
-            // echo "<br>";  
-            // echo "Mobile NoErr: " .$phoneNoErr;  
-            // echo "<br>";  
-            // echo "TypeOfWorkErr: " .$typeOfWorkErr;
-            // echo "<br>";  
-            // echo "EmailErr: " .$emailErr;  
-            // echo "<br>";  
-            // echo "AddressErr: " .$addressErr;  
-            // echo "<br>";  
-            // echo "BirthDateErr: " .$birthDateErr;
-            // echo "<br>";  
-            // echo "GenderErr: " .$genderErr;  
-            // echo "<br>";
             echo '<script> console.log("Succes"); </script>';
             echo '<script> alert("Inserted all fields")</script>';
 
@@ -146,7 +149,7 @@
                 // echo nl2br("Values inserted in table successfully\n");
                 echo '<script> alert("New import record added successfully")</script>';
                 echo '<script> console.log("Values inserted in Import table successfully"); </script>';
-                echo '<script> window.location.href="./manageImport.php"</script>';
+                // echo '<script> window.location.href="./manageImport.php"</script>';
             }
             else
             {
@@ -159,39 +162,8 @@
             // echo '<script> window.location.href = "2nd.php"; </script>';
             
         } else {  
-            // echo "<h3 color = #FF0001> <b>You have sucessfully registered.</b> </h3>";  
-            // echo "<h2>Your Input:</h2>";  
-            // echo "Name: " .$name;  
-            // echo "<br>";  
-            // echo "Mobile No: " .$phoneNo;  
-            // echo "<br>";  
-            // echo "TypeOfWork: " .$typeOfWork;
-            // echo "<br>";  
-            // echo "Email: " .$email;  
-            // echo "<br>";  
-            // echo "Address: " .$address;  
-            // echo "<br>";  
-            // echo "BirthDate: " .$birthDate;
-            // echo "<br>";  
-            // echo "Gender: " .$gender;  
-            // echo "<br>";
-            // echo "<br>";
-            
             // echo "NameErr: " .$nameErr;  
             // echo "<br>";  
-            // echo "Mobile NoErr: " .$phoneNoErr;  
-            // echo "<br>";  
-            // echo "TypeOfWorkErr: " .$typeOfWorkErr;
-            // echo "<br>";  
-            // echo "EmailErr: " .$emailErr;  
-            // echo "<br>";  
-            // echo "AddressErr: " .$addressErr;  
-            // echo "<br>";  
-            // echo "BirthDateErr: " .$birthDateErr;
-            // echo "<br>";  
-            // echo "GenderErr: " .$genderErr;  
-            // echo "<br>";
-
             // echo "<h3> <b>You didn't filled up the form correctly.</b> </h3>";  
             echo '<script> console.log("Failure"); </script>';
             echo '<script> alert("Error in entering values please check and try again")</script>';
@@ -207,12 +179,6 @@
         
     }
       
-      function test_input($data) {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-      }
     //   var_dump($name);
     //   var_dump($phoneNo);
     //   var_dump($typeOfWork);
@@ -220,11 +186,44 @@
     //   var_dump($address);
     //   var_dump($birthDate);
     //   var_dump($gender);
-
-    
     
 ?>
-
+<!-- <script>
+            var jIPPL = '<?php echo $importPricePerLiter;?>';
+            console.log('jIPPL: '+jIPPL);
+            var jQ = '<?php echo $importQuantity?>';
+            console.log('jQ: '+jQ);
+            var importPirce = jIPPL * jQ;
+            console.log('importPirce: '+importPirce);
+            var element = document.getElementById('importPrice');
+            console.log(element);
+</script> -->
+<script>
+            function calculateImportPrice()
+            {
+                document.getElementById("importPrice").style.backgroundColor = "white";
+                // var jIPPL = '<?php echo $importPricePerLiter;?>';
+                var jIPPL = document.getElementById('importPricePerLiter').value;
+                console.log('jIPPL: '+jIPPL);
+                // var jQ = '<?php echo $importQuantity?>';
+                var jIQ = document.getElementById('importQuantity').value;
+                console.log('jQ: '+jIQ);
+                var jIP = jIPPL * jIQ;
+                console.log('jIP: '+jIP);
+                document.getElementById('importPrice').value = jIP;
+                document.cookie = "Cookie = "+jIP;
+                
+                // var element = document.getElementById('importPrice').value = importPirce;
+                console.log(element);
+                // document.getElementById("importPrice").style.backgroundColor = "white";
+                // document.getElementById("importPrice").style.backgroundColor = "white";
+            }
+            function chngeColor()
+            {
+                document.getElementById("importPrice").style.backgroundColor = "#cfe0fc";
+            }
+    </script>
+    
 <html>
 
 <head>
@@ -298,17 +297,20 @@
                 </div>
                 <div class="NameandInputC">
                     <span class="inputName">Price Per Liter</span><br>
-                    <input type="text" name="importPricePerLiter" placeholder="Price Per Liter" value="<?php echo $importPricePerLiter;?>">
+                    <input id="importPricePerLiter" type="text" name="importPricePerLiter" placeholder="Price Per Liter"
+                     value="<?php echo $importPricePerLiter;?>" onkeydown="chngeColor()" onkeyup="calculateImportPrice()">
                     <span class="error"> <?php echo $importPricePerLiterErr; ?> </span>  
                 </div>
                 <div class="NameandInputC">
                     <span class="inputName">Quantity</span><br>
-                    <input type="text" name="importQuantity" placeholder="Quantity" value="<?php echo $importQuantity;?>">
+                    <input id = "importQuantity" type="text" name="importQuantity" placeholder="Quantity"
+                     value="<?php echo $importQuantity;?>" onkeydown="chngeColor()" onkeyup="calculateImportPrice()">
                     <span class="error"> <?php echo $importQuantityErr; ?> </span>  
                 </div>
                 <div class="NameandInputC">
                     <span class="inputName">Total Price</span><br>
-                    <input type="text" name="importPrice" placeholder="Total Price" value="<?php echo $importPrice;?>">
+                    <input id="importPrice" type="text" name="importPrice" placeholder="Total Price"
+                     value="<?php echo $importPrice;?>" disabled>
                     <span class="error"> <?php echo $importPriceErr; ?> </span>  
                 </div>
             </div>
@@ -317,6 +319,29 @@
             </div>
         </form>
     </div>
+    <!-- <script>
+            function calculateImportPrice()
+            {
+                document.getElementById("importPrice").style.backgroundColor = "white";
+                // var jIPPL = '<?php echo $importPricePerLiter;?>';
+                var jIPPL = document.getElementById('importPricePerLiter').value;
+                console.log('jIPPL: '+jIPPL);
+                // var jQ = '<?php echo $importQuantity?>';
+                var jIQ = document.getElementById('importQuantity').value;
+                console.log('jQ: '+jIQ);
+                var jIP = jIPPL * jIQ;
+                console.log('jIP: '+jIP);
+                document.getElementById('importPrice').value = jIP;
+                // var element = document.getElementById('importPrice').value = importPirce;
+                console.log(element);
+                // document.getElementById("importPrice").style.backgroundColor = "white";
+                // document.getElementById("importPrice").style.backgroundColor = "white";
+            }
+            function chngeColor()
+            {
+                document.getElementById("importPrice").style.backgroundColor = "#9ec1fa";
+            }
+    </script> -->
 </body>
 </html>
 

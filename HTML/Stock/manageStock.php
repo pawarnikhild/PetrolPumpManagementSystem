@@ -48,7 +48,7 @@ $result = $conn->query($sql);
         ?>
                     <tr>
                         <td> <?php echo $row["stock_id"]; ?> </td>
-                        <td> <?php echo $row["stock_date"]; ?> </td>
+                        <td> <?php echo date('d/m/Y', strtotime($row["stock_date"])); ?> </td>
                         <td> <?php echo $row["stock_name"]; ?> </td>
                         <td> <?php echo $row["stock_quantity"]; ?> </td>
                         <!-- <td>2</td>

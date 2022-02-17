@@ -1,5 +1,8 @@
 <?php
-   
+    // Here variables are initialized to because in form it gives error if not initialized. Because these are initialized empty(null)
+    // they do not take any space in form. They appear and take space only if they are assigned with value other than null. (When 
+    // there is error generated)
+    // If we don't want to initialize these variable here we have to use isset function in span element in form
     $nameErr = $phoneNoErr = $typeOfWorkErr = $emailErr = $addressErr = $birthDateErr = $genderErr = "";
     $name =  $phoneNo = $typeOfWork = $email = $address = $birthDate = $gender = "";
 
